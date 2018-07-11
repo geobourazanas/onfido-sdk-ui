@@ -9,9 +9,5 @@ export const errors = (i18n) => ({
   'GLARE_DETECTED': { message: i18n.t('errors.glare_detected.message'), instruction: i18n.t('errors.glare_detected.instruction')},
   'SMS_FAILED': { message: i18n.t('errors.sms_failed.message'), instruction: i18n.t('errors.sms_failed.instruction')},
   'SMS_OVERUSE': { message: i18n.t('errors.sms_overuse.message'), instruction: i18n.t('errors.sms_overuse.instruction')},
-  'LIVENESS_TIMEOUT': {
-    message: i18n.t('errors.liveness_timeout.message'),
-    instruction: i18n.t('errors.liveness_timeout.instruction'),
-    action: i18n.t('errors.liveness_timeout.action'),
-  },
+  'LIVENESS_TIMEOUT': { message: i18n.t('errors.liveness_timeout.message'), instruction: i18n.t('errors.liveness_timeout.instruction')},
 })
