@@ -30,14 +30,14 @@ const UploadFallback = ({onUploadFallback, onFallbackClick, method, i18n}) => {
   )
 }
 
-export const CaptureActions = ({handleClick, btnText, isFullScreen, btnClass}: CameraActionType) => {
+export const CaptureActions = ({children, hint}: CameraActionType) => {
   return (
     <div className={style.captureActions}>
-      <button
-        className={classNames(style.btn, btnClass)}
-        onClick={handleClick}>
-        <div className={classNames({[style.btnText]: isFullScreen})}>{btnText}</div>
-      </button>
+      { hint ?
+          <div className={style.captureActionsHint}>{hint}</div> :
+          null
+      }
+      {children}
     </div>
   )
 }
@@ -63,11 +63,15 @@ export class CameraPure extends React.Component<CameraPureType> {
 
   render() {
     const {method, title, subTitle, onUploadFallback, onFallbackClick,
-      onUserMedia, onFailure, webcamRef, isFullScreen, i18n, video} = this.props;
+      onUserMedia, onFailure, webcamRef, isFullScreen, i18n, video, className} = this.props;
     return (
       <div className={style.camera}>
         <Title {...{title, subTitle, isFullScreen}} smaller={true}/>
-        <div className={classNames(style["video-overlay"], {[style.overlayFullScreen]: isFullScreen})}>
+        <div className={classNames(
+          style["video-overlay"],
+          {[style.overlayFullScreen]: isFullScreen},
+          className
+        )}>
           <Webcam
             className={style.video}
             audio={!!video}

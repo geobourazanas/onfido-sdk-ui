@@ -20,9 +20,9 @@
 }
 
 .fullScreen {
-  @media (--small-viewport) {
+  /*@media (--small-viewport) {*/
     position: inherit;
-  }
+  /*}*/
 }
 
 .navigationBar{
@@ -35,9 +35,9 @@
 }
 
 .fullScreenContentWrapper {
-  @media (--small-viewport) {
+  /*@media (--small-viewport) {*/
     position: static;
-  }
+  /*}*/
 }
 
 .footer {
